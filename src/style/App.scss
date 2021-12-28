@@ -1,0 +1,90 @@
+@import 'config';
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Space Mono', monospace;
+}
+
+body {
+	background-color: $light-grayish-cyan;
+}
+
+.header {
+	margin-top: 10rem;
+	text-align: center;
+}
+
+.main-container {
+	display: flex;
+	flex-direction: row;
+	width: 60rem;
+	background-color: white;
+	margin: 5rem auto;
+	border-radius: 15px;
+	padding: 1.6rem;
+}
+
+// This is the div that holds the form for tip calculation.
+.tip-info-container {
+	background-color: white;
+	// display: inline-block;
+	font-size: 15px;
+	color: $darker-grayish-cyan;
+	font-weight: 500;
+	width: 100%;
+	margin-right: 30px;
+}
+
+::placeholder {
+	color: $darker-grayish-cyan;
+}
+
+// This is the actual form for calculating the tip
+.tip-info-form {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+#bill-amount {
+	margin-bottom: 20px; // Controls the space below the bill amount input field
+}
+
+// This is the input field that takes in the total bill amount, custom, people.
+#bill-amount,
+#people,
+#custom {
+	border: none;
+	background-color: $input-background;
+	color: $very-dark-cyan;
+	font-size: 20px;
+	border-radius: 5px;
+	text-align: end;
+	padding: 8px 20px 8px 0;
+}
+
+.tip-amount-display-container {
+	background-color: $very-dark-cyan;
+	color: white;
+	border-radius: 15px;
+	padding: 1.5rem;
+	width: 100%;
+	// display: inline-block;
+}
+
+.tip-percent-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	margin-bottom: 20px; // controls the space below Tip Percent Buttons
+}
+
+.tip-percent-item {
+	border: none;
+	background-color: $very-dark-cyan;
+	color: white;
+	border-radius: 5px;
+	padding: 8px 25px 8px 25px;
+	font-size: 20px;
+}
