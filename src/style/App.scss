@@ -88,3 +88,13 @@ body {
 	padding: 8px 25px 8px 25px;
 	font-size: 20px;
 }
+
+#reset-button {
+	border: none;
+	background-color: $strong-cyan;
+	color: $very-dark-cyan;
+	border-radius: 5px;
+	padding: 8px 25px 8px 25px;
+	font-size: 18px;
+	font-weight: 600;
+}
