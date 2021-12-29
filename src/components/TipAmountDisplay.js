@@ -14,18 +14,18 @@ const TipAmountDisplay = () => {
 
 	return (
 		<div className="tip-amount-display-container">
-			<div className="total-amount">
+			<div className="tip-amount">
 				<p>
 					Tip Amount
-					<span>/ person</span>
-					<span> ${tipAmountPerPerson} </span>
+					<span className="per-person">/ person</span>
+					<span className="amount-display"> ${tipAmountPerPerson} </span>
 				</p>
 			</div>
 			<div className="total-person">
 				<p>
 					Total
-					<span>/ person</span>
-					<span> ${totalAmountPerPerson}</span>
+					<span className="per-person">/ person</span>
+					<span className="amount-display"> ${totalAmountPerPerson}</span>
 				</p>
 			</div>
 			<button type="submit" id="reset-button" onClick={handleClick}>

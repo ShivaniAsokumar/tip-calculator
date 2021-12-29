@@ -98,3 +98,18 @@ body {
 	font-size: 18px;
 	font-weight: 600;
 }
+
+.tip-amount,
+.total-person {
+	font-weight: 600;
+}
+
+.per-person {
+	font-weight: normal;
+	color: $dark-grayish-cyan;
+}
+
+.amount-display {
+	color: $strong-cyan;
+	font-size: 30px;
+}
