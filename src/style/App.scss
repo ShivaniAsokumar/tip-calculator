@@ -11,14 +11,14 @@ body {
 }
 
 .header {
-	margin-top: 10rem;
+	margin-top: 5rem;
 	text-align: center;
 }
 
 .main-container {
 	display: flex;
 	flex-direction: row;
-	width: 60rem;
+	width: 50rem;
 	background-color: white;
 	margin: 5rem auto;
 	border-radius: 15px;
@@ -49,6 +49,21 @@ body {
 
 #bill-amount {
 	margin-bottom: 20px; // Controls the space below the bill amount input field
+	position: relative;
+}
+
+#dollar-sign {
+	position: absolute;
+	font-size: 20px;
+	top: 276px;
+	left: 360px;
+}
+
+#number-of-people {
+	position: absolute;
+	font-size: 20px;
+	top: 514px;
+	left: 360px;
 }
 
 // This is the input field that takes in the total bill amount, custom, people.
@@ -70,14 +85,17 @@ body {
 	border-radius: 15px;
 	padding: 1.5rem;
 	width: 100%;
-	// display: inline-block;
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 
 .tip-percent-container {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
-	margin-bottom: 20px; // controls the space below Tip Percent Buttons
+	margin-bottom: 20px; // controls the space below Tip Percent Buttonss
+	// margin-top: -10px;
+	justify-content: center;
 }
 
 .tip-percent-item {
@@ -87,6 +105,15 @@ body {
 	border-radius: 5px;
 	padding: 8px 25px 8px 25px;
 	font-size: 20px;
+	width: 108px;
+	margin-top: 10px;
+}
+
+#five,
+#ten,
+#twenty,
+#fifty {
+	margin-right: 10px;
 }
 
 #reset-button {
@@ -97,19 +124,31 @@ body {
 	padding: 8px 25px 8px 25px;
 	font-size: 18px;
 	font-weight: 600;
+	position: absolute;
+	bottom: 1.5rem;
+
+	left: 2.9rem;
+	width: 75%;
 }
 
 .tip-amount,
 .total-person {
 	font-weight: 600;
+	font-size: 18px;
+}
+
+.tip-amount {
+	margin-bottom: 25px;
 }
 
 .per-person {
 	font-weight: normal;
 	color: $dark-grayish-cyan;
+	font-size: 15px;
 }
 
 .amount-display {
 	color: $strong-cyan;
 	font-size: 30px;
+	float: right;
 }

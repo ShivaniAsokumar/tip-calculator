@@ -1,12 +1,24 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { TipContext } from './TipContext';
 import '../style/App.scss';
 
 const TipAmountDisplay = () => {
-	const [ bill, people, tipPercent, setBill ] = useContext(TipContext);
+	const [ bill, people, tipPercent, setBill, setPeople, setTipPercent ] = useContext(TipContext);
 
-	let tipAmountPerPerson = bill * (tipPercent / 100) / people;
-	let totalAmountPerPerson = bill / people + tipAmountPerPerson;
+	let tipAmountPerPerson;
+	let totalAmountPerPerson;
+
+	if (people === '0') {
+		tipAmountPerPerson = 0;
+	} else {
+		tipAmountPerPerson = bill * (tipPercent / 100) / people;
+	}
+
+	if (people === '0' && tipAmountPerPerson === 0) {
+		totalAmountPerPerson = 0;
+	} else {
+		totalAmountPerPerson = bill / people + tipAmountPerPerson;
+	}
 
 	const handleClick = () => {
 		setBill('0');
@@ -16,17 +28,16 @@ const TipAmountDisplay = () => {
 		<div className="tip-amount-display-container">
 			<div className="tip-amount">
 				<p>
-					Tip Amount
-					<span className="per-person">/ person</span>
-					<span className="amount-display"> ${tipAmountPerPerson} </span>
+					Tip Amount <span className="amount-display"> ${tipAmountPerPerson.toFixed(2)} </span>
 				</p>
+				<span className="per-person">/ person</span>
 			</div>
+
 			<div className="total-person">
 				<p>
-					Total
-					<span className="per-person">/ person</span>
-					<span className="amount-display"> ${totalAmountPerPerson}</span>
+					Total <span className="amount-display"> ${totalAmountPerPerson.toFixed(2)}</span>
 				</p>
+				<span className="per-person">/ person</span>
 			</div>
 			<button type="submit" id="reset-button" onClick={handleClick}>
 				RESET
