@@ -25,7 +25,18 @@ body {
 	padding: 1.6rem;
 }
 
-// This is the div that holds the form for tip calculation.
+@media all and (max-width: 800px) {
+	.main-container {
+		display: flex;
+		flex-direction: column;
+		width: 25rem;
+	}
+
+	.tip-amount-display-container {
+		margin-top: 25px;
+	}
+}
+
 .tip-info-container {
 	background-color: white;
 	// display: inline-block;
@@ -124,11 +135,14 @@ body {
 	padding: 8px 25px 8px 25px;
 	font-size: 18px;
 	font-weight: 600;
-	position: absolute;
-	bottom: 1.5rem;
 
-	left: 2.9rem;
-	width: 75%;
+	@media all and (min-width: 800px) {
+		position: absolute;
+		bottom: 1.5rem;
+
+		left: 2.9rem;
+		width: 75%;
+	}
 }
 
 .tip-amount,
@@ -139,6 +153,12 @@ body {
 
 .tip-amount {
 	margin-bottom: 25px;
+}
+
+@media all and (max-width: 800px) {
+	.total-person {
+		margin-bottom: 25px;
+	}
 }
 
 .per-person {

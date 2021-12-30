@@ -21,7 +21,13 @@ const TipInfo = () => {
 					Bill
 				</label>
 
-				<input type="text" id="bill-amount" placeholder="0" className="tip-info-item" onChange={updateBill} />
+				<input
+					type="text"
+					id="bill-amount"
+					placeholder="0.00"
+					className="tip-info-item"
+					onChange={updateBill}
+				/>
 				<i id="dollar-sign">$</i>
 
 				{/* Tip Percent Options */}
