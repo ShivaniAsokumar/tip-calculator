@@ -3,7 +3,9 @@ import { TipContext } from './TipContext';
 import '../style/App.scss';
 
 const TipAmountDisplay = () => {
-	const [ bill, people, tipPercent, setBill, setPeople, setTipPercent ] = useContext(TipContext);
+	const [ bill, people, tipPercent, setBill, setPeople, setTipPercent, activeButton, setActiveButton ] = useContext(
+		TipContext
+	);
 
 	let tipAmountPerPerson;
 	let totalAmountPerPerson;
@@ -24,6 +26,7 @@ const TipAmountDisplay = () => {
 		setBill('');
 		setPeople('');
 		setTipPercent('');
+		setActiveButton('');
 	};
 
 	return (

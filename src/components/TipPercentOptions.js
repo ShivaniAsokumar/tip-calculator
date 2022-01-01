@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../style/App.scss';
 
-const TipPercentOptions = ({ setTipPercent }) => {
-	const [ activeButton, setActiveButton ] = useState('');
+const TipPercentOptions = ({ setTipPercent, activeButton, setActiveButton }) => {
+	// const [ activeButton, setActiveButton ] = useState('');
 
 	const updateTipPercent = (percent, id) => {
 		setTipPercent(percent);
