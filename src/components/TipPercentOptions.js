@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import '../style/App.scss';
 
-const TipPercentOptions = ({ setTipPercent, activeButton, setActiveButton }) => {
-	// const [ activeButton, setActiveButton ] = useState('');
-
+const TipPercentOptions = ({ tipPercent, setTipPercent, activeButton, setActiveButton, customTip, setCustomTip }) => {
 	const updateTipPercent = (percent, id) => {
 		setTipPercent(percent);
 		setActiveButton(id);
 	};
 
 	const updateCustomTipPercent = (e) => {
-		setTipPercent(e.target.value);
+		// setTipPercent(e.target.value);
+		setCustomTip(e.target.value);
 	};
 
 	const percentOptions = [
@@ -20,6 +19,11 @@ const TipPercentOptions = ({ setTipPercent, activeButton, setActiveButton }) => 
 		{ value: '20%', id: 'twenty', percent: 20 },
 		{ value: '50%', id: 'fifty', percent: 50 }
 	];
+
+	let customType = '';
+	if (customTip !== '' && isNaN(parseInt(customTip))) {
+		customType = 'string';
+	}
 
 	return (
 		<div className="tip-percent-container">
@@ -45,6 +49,14 @@ const TipPercentOptions = ({ setTipPercent, activeButton, setActiveButton }) => 
 				placeholder="Custom"
 				id="custom"
 				className="tip-percent-item"
+				value={customTip}
+				style={
+					customTip === '0' || customType === 'string' ? (
+						{ border: 'solid #FF7878', borderWidth: '2px' }
+					) : (
+						{ border: '' }
+					)
+				}
 				onChange={updateCustomTipPercent}
 			/>
 		</div>

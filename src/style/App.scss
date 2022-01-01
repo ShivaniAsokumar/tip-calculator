@@ -73,6 +73,10 @@ body {
 	flex-direction: column;
 }
 
+.input-label {
+	font-weight: 600;
+}
+
 #bill-amount {
 	margin-bottom: 20px; // Controls the space below the bill amount input field
 	position: relative;

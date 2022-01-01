@@ -3,20 +3,33 @@ import { TipContext } from './TipContext';
 import '../style/App.scss';
 
 const TipAmountDisplay = () => {
-	const [ bill, people, tipPercent, setBill, setPeople, setTipPercent, activeButton, setActiveButton ] = useContext(
-		TipContext
-	);
+	const [
+		bill,
+		people,
+		tipPercent,
+		setBill,
+		setPeople,
+		setTipPercent,
+		activeButton,
+		setActiveButton,
+		customTip,
+		setCustomTip
+	] = useContext(TipContext);
 
 	let tipAmountPerPerson;
 	let totalAmountPerPerson;
 
-	if (people === '0' || !people) {
+	// Calculates Tip Amount / person
+	if (people === '0' || !people || isNaN(people) || isNaN(bill)) {
 		tipAmountPerPerson = 0;
+	} else if (customTip) {
+		tipAmountPerPerson = bill * (customTip / 100) / people;
 	} else {
 		tipAmountPerPerson = bill * (tipPercent / 100) / people;
 	}
 
-	if ((people === '0' || !people) && tipAmountPerPerson === 0) {
+	// Calculate Total / person
+	if ((people === '0' || !people || isNaN(people) || isNaN(bill)) && tipAmountPerPerson === 0) {
 		totalAmountPerPerson = 0;
 	} else {
 		totalAmountPerPerson = bill / people + tipAmountPerPerson;
@@ -27,6 +40,7 @@ const TipAmountDisplay = () => {
 		setPeople('');
 		setTipPercent('');
 		setActiveButton('');
+		setCustomTip('');
 	};
 
 	return (
