@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { TipContext } from './TipContext';
 import '../style/App.scss';
 
 const TipPercentOptions = ({ setTipPercent }) => {
@@ -13,8 +12,6 @@ const TipPercentOptions = ({ setTipPercent }) => {
 	const updateCustomTipPercent = (e) => {
 		setTipPercent(e.target.value);
 	};
-
-	const changeBackgroundColor = (id) => {};
 
 	const percentOptions = [
 		{ value: '5%', id: 'five', percent: 5 },

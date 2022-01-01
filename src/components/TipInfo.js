@@ -21,18 +21,31 @@ const TipInfo = () => {
 					Bill
 				</label>
 
-				<input type="text" id="bill-amount" placeholder="0" className="tip-info-item" onChange={updateBill} />
+				<input
+					type="text"
+					id="bill-amount"
+					placeholder="0"
+					className="tip-info-item"
+					value={bill}
+					onChange={updateBill}
+				/>
 
 				{/* Tip Percent Options */}
 				<p className="tip-info-item">Select Tip %</p>
 				<TipPercentOptions className="tip-info-item" setTipPercent={setTipPercent} />
 
 				{/* Number of People */}
-
 				<label htmlFor="people" className="tip-info-item">
 					Number of People
 				</label>
-				<input type="text" id="people" placeholder="0" className="tip-info-item" onChange={updatePeople} />
+				<input
+					type="text"
+					id="people"
+					placeholder="0"
+					className="tip-info-item"
+					value={people}
+					onChange={updatePeople}
+				/>
 			</form>
 		</div>
 	);

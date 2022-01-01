@@ -8,20 +8,22 @@ const TipAmountDisplay = () => {
 	let tipAmountPerPerson;
 	let totalAmountPerPerson;
 
-	if (people === '0') {
+	if (people === '0' || !people) {
 		tipAmountPerPerson = 0;
 	} else {
 		tipAmountPerPerson = bill * (tipPercent / 100) / people;
 	}
 
-	if (people === '0' && tipAmountPerPerson === 0) {
+	if ((people === '0' || !people) && tipAmountPerPerson === 0) {
 		totalAmountPerPerson = 0;
 	} else {
 		totalAmountPerPerson = bill / people + tipAmountPerPerson;
 	}
 
 	const handleClick = () => {
-		setBill('0');
+		setBill('');
+		setPeople('');
+		setTipPercent('');
 	};
 
 	return (

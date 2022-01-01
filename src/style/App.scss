@@ -86,6 +86,7 @@ body {
 #people:focus,
 #custom:focus {
 	border: solid $strong-cyan;
+	border-width: 2px;
 }
 
 #bill-amount,
