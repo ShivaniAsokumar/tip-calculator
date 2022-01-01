@@ -170,6 +170,10 @@ body {
 	background-color: #a6e3dc;
 }
 
+#reset-button:disabled {
+	background-color: $reset-inactive;
+}
+
 .tip-amount,
 .total-person {
 	font-weight: 600;

@@ -58,9 +58,15 @@ const TipAmountDisplay = () => {
 				</p>
 				<span className="per-person">/ person</span>
 			</div>
-			<button type="submit" id="reset-button" onClick={handleClick}>
-				RESET
-			</button>
+			{!people && !bill && !customTip && !tipPercent ? (
+				<button type="submit" id="reset-button" onClick={handleClick} disabled>
+					RESET
+				</button>
+			) : (
+				<button type="submit" id="reset-button" onClick={handleClick}>
+					RESET
+				</button>
+			)}
 		</div>
 	);
 };
