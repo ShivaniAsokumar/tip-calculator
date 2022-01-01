@@ -10,6 +10,7 @@ const TipPercentOptions = ({ setTipPercent }) => {
 	const updateCustomTipPercent = (e) => {
 		setTipPercent(e.target.value);
 	};
+
 	return (
 		<div className="tip-percent-container">
 			<input

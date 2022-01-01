@@ -21,14 +21,7 @@ const TipInfo = () => {
 					Bill
 				</label>
 
-				<input
-					type="text"
-					id="bill-amount"
-					placeholder="0.00"
-					className="tip-info-item"
-					onChange={updateBill}
-				/>
-				<i id="dollar-sign">$</i>
+				<input type="text" id="bill-amount" placeholder="0" className="tip-info-item" onChange={updateBill} />
 
 				{/* Tip Percent Options */}
 				<p className="tip-info-item">Select Tip %</p>
@@ -40,7 +33,6 @@ const TipInfo = () => {
 					Number of People
 				</label>
 				<input type="text" id="people" placeholder="0" className="tip-info-item" onChange={updatePeople} />
-				<i id="number-of-people">#</i>
 			</form>
 		</div>
 	);

@@ -37,6 +37,21 @@ body {
 	}
 }
 
+@media all and (max-width: 420px) {
+	.main-container {
+		width: 20rem;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	#fifteen {
+		margin-right: 10px;
+	}
+
+	#custom {
+		margin-right: 10px;
+	}
+}
 .tip-info-container {
 	background-color: white;
 	// display: inline-block;
@@ -48,7 +63,7 @@ body {
 }
 
 ::placeholder {
-	color: $darker-grayish-cyan;
+	color: $dark-grayish-cyan;
 }
 
 // This is the actual form for calculating the tip
@@ -63,21 +78,16 @@ body {
 	position: relative;
 }
 
-#dollar-sign {
-	position: absolute;
-	font-size: 20px;
-	top: 276px;
-	left: 360px;
+:focus {
+	outline: none;
 }
 
-#number-of-people {
-	position: absolute;
-	font-size: 20px;
-	top: 514px;
-	left: 360px;
+#bill-amount:focus,
+#people:focus,
+#custom:focus {
+	border: solid $strong-cyan;
 }
 
-// This is the input field that takes in the total bill amount, custom, people.
 #bill-amount,
 #people,
 #custom {
@@ -88,6 +98,7 @@ body {
 	border-radius: 5px;
 	text-align: end;
 	padding: 8px 20px 8px 0;
+	font-weight: 700;
 }
 
 .tip-amount-display-container {
@@ -118,6 +129,11 @@ body {
 	font-size: 20px;
 	width: 108px;
 	margin-top: 10px;
+	font-weight: 600;
+}
+.tip-percent-item:hover {
+	background-color: #a6e3dc;
+	color: $very-dark-cyan;
 }
 
 #five,
@@ -143,6 +159,10 @@ body {
 		left: 2.9rem;
 		width: 75%;
 	}
+}
+
+#reset-button:hover {
+	background-color: #a6e3dc;
 }
 
 .tip-amount,
