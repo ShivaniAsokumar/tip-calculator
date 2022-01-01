@@ -3,51 +3,46 @@ import { TipContext } from './TipContext';
 import '../style/App.scss';
 
 const TipPercentOptions = ({ setTipPercent }) => {
-	const updateTipPercent = (percent) => {
+	const [ activeButton, setActiveButton ] = useState('');
+
+	const updateTipPercent = (percent, id) => {
 		setTipPercent(percent);
+		setActiveButton(id);
 	};
 
 	const updateCustomTipPercent = (e) => {
 		setTipPercent(e.target.value);
 	};
 
+	const changeBackgroundColor = (id) => {};
+
+	const percentOptions = [
+		{ value: '5%', id: 'five', percent: 5 },
+		{ value: '10%', id: 'ten', percent: 10 },
+		{ value: '15%', id: 'fifteen', percent: 15 },
+		{ value: '20%', id: 'twenty', percent: 20 },
+		{ value: '50%', id: 'fifty', percent: 50 }
+	];
+
 	return (
 		<div className="tip-percent-container">
-			<input
-				type="button"
-				value="5%"
-				id="five"
-				className="tip-percent-item"
-				onClick={() => updateTipPercent('5')}
-			/>
-			<input
-				type="button"
-				value="10%"
-				id="ten"
-				className="tip-percent-item"
-				onClick={() => updateTipPercent('10')}
-			/>
-			<input
-				type="button"
-				value="15%"
-				id="fifteen"
-				className="tip-percent-item"
-				onClick={() => updateTipPercent('15')}
-			/>
-			<input
-				type="button"
-				value="20%"
-				id="twenty"
-				className="tip-percent-item"
-				onClick={() => updateTipPercent('20')}
-			/>
-			<input
-				type="button"
-				value="50%"
-				id="fifty"
-				className="tip-percent-item"
-				onClick={() => updateTipPercent('50')}
-			/>
+			{percentOptions.map((option) => (
+				<input
+					type="button"
+					key={option.id}
+					value={option.value}
+					id={option.id}
+					className="tip-percent-item"
+					style={
+						activeButton === option.id ? (
+							{ backgroundColor: '#26c0ab', color: '#00494d' }
+						) : (
+							{ backgroundColor: '' }
+						)
+					}
+					onClick={() => updateTipPercent(option.percent, option.id)}
+				/>
+			))}
 			<input
 				type="text"
 				placeholder="Custom"
