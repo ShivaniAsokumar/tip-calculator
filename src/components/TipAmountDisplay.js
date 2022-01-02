@@ -16,6 +16,9 @@ const TipAmountDisplay = () => {
 		setCustomTip
 	] = useContext(TipContext);
 
+	if (activeButton) {
+		console.log('Hello World');
+	}
 	let tipAmountPerPerson;
 	let totalAmountPerPerson;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/App.scss';
 
-const TipPercentOptions = ({ tipPercent, setTipPercent, activeButton, setActiveButton, customTip, setCustomTip }) => {
+const TipPercentOptions = ({ setTipPercent, activeButton, setActiveButton, customTip, setCustomTip }) => {
 	const updateTipPercent = (percent, id) => {
 		setTipPercent(percent);
 		setActiveButton(id);
