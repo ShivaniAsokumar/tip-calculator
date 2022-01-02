@@ -10,7 +10,6 @@ const TipAmountDisplay = () => {
 		setBill,
 		setPeople,
 		setTipPercent,
-		activeButton,
 		setActiveButton,
 		customTip,
 		setCustomTip

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../style/App.scss';
 
 const TipPercentOptions = ({ tipPercent, setTipPercent, activeButton, setActiveButton, customTip, setCustomTip }) => {

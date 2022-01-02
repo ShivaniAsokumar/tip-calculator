@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import TipPercentOptions from './TipPercentOptions';
 import { TipContext } from './TipContext';
-import { faPepperHot } from '@fortawesome/free-solid-svg-icons';
 
 const TipInfo = () => {
 	const [
