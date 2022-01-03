@@ -66,6 +66,10 @@ body {
 	color: $dark-grayish-cyan;
 }
 
+:focus::placeholder {
+	color: transparent;
+}
+
 // This is the actual form for calculating the tip
 .tip-info-form {
 	display: flex;
