@@ -8,7 +8,7 @@ Splitter is an app that allows users to calculate the tip for each individual. T
 1. Clone the app locally using the following command `git clone https://github.com/ShivaniAsokumar/tip-calculator.git`
 2. Once inside the directory, run `npm install`
 3. Run `npm start`
-4. Navigate to `http://localhost:3000` to play the game
+4. Navigate to `http://localhost:3000` to use the app
 
 ### How to calculate tip
 1. Enter the total Bill Amount
